@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فروش بلیط کنرست</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'ticketsales/css/bootstarp.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'ticketsales/css/fontawesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%static'ticketsale/css/style.css'%}">
+
+    <style>
+        @font-face {
+        font-family: 'cali';
+        src: local('cali'),
+        url('{% static "ticketsale/fonts/cali.otf" %}')format('otf'),
+    
+        }
+        </style>
+</head>
+
+    <body>
+        <div.head>
+            
+            <h1.a  style="border: 2px; border-color: black ;" >  لیست  تمامی کنسرتها </h1>
+            <h3.a>در این صفحه شما میتوانید تمامی کنسرت هارو مشاهده کنید</h3>
+
+                
+
+        </div>
+        <ul class="btnul">
+            <li><a class="btn btn-success">ورود>/a></li>
+            <li><a class="btn btn-danger">خروج>/a></li>
+            <li><a class="btn default" href="/ticketSales/Time/list">
+            <li><a مشاهده سانس های کنسرت></a> 
+            <li><a class="btn btn-primary">اصلی صفحه>/a></li>
+            <li><a class="btn btn-danger"
+            href="/ticketSales/location/list">محل اطالعات>/a></li>
+            </ul>
+            {% if user.is_authenticated %}
+            <li><a class="btn btn-danger" href="/accounts/logout" >خروج>/a></li>
+            {% else %}
+            <li><a class="btn btn-success" href="/accounts/login" >ورود>/a></li>
+            {% end if %}
+        
+        
+    </body> 
+
+    <script src="{% static 'ticketSales/js/jquery-3.6.0.min.js' %} " ></script>
+    <script src="{% static 'ticketSales/js/bootstrap.bundle.js' %} " ></script>
+    <script src="{% static 'ticketSales/js/fontawesome.js' %} " ></script>
+    <script src="{% static 'ticketSales/js/main.js' %} " ></script>
+
+</html>

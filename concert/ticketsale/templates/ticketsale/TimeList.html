@@ -1,0 +1,28 @@
+{% extends" ticketSales/layout.html"%} 
+
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block  %}
+    <title>سامانه فروش بلیط کنسرت</title>
+    
+</head>
+<body>
+    {% extends "ticketSales/layout.html" %}
+    <h1>تایم کنسرت ها</h1>
+
+    <ul>
+        {% if TimeList %}
+        
+        {% for time in TimeConcert  %}
+
+        <p>سانس های موجود: {{ time.concertModel.name }}</p>
+
+        {% endfor %}
+
+        {% endif %}
+    </ul>
+</body>
+</html>

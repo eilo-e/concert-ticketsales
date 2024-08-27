@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سامانه فروش بلیط کنسرت</title>
+    
+</head>
+<body>
+    {% extends "ticketSales/layout.html" %}
+    <h1>لیست کنسرت ها</h1>
+    <ul>
+        {%for a in range 12%}
+        {%print a%}
+        {%end for%}
+    </ul>
+    <ul>
+        {% if concertlist %}
+        <p>تعداد کنسرت های موجود : {{concertcount}}</p>
+        {% for concert in concertlist%}
+        <li>
+        {{ concert}}
+        </li>
+        {% endfor %}
+        {% endif %}
+    </ul>
+</body>
+</html>
