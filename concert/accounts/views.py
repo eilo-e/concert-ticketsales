@@ -1,7 +1,8 @@
 from django.conf import settings
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
-from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth import authenticate , login , logout
+from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 import ticketsale
 import ticketsale.views
@@ -11,8 +12,8 @@ import ticketsale.views
 def loginview(request):
     if request.method=='POST':
         username=request.POST.get('username')
-        password=request.POST.get('password')
-        user=authenticate(request,username=username,password=password)
+        password = request.POST.get('password')
+        user= authenticate(request,username=username,password=password)
     
     if user is not None:
         login(request,user)
@@ -35,3 +36,4 @@ def logoutView(request):
 
 #else:
 #sreturn render(request, "accounts/login.html", {})
+
